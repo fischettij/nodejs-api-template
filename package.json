@@ -1,7 +1,7 @@
 {
-  "name": "medinode",
+  "name": "nodejs-api-template",
   "version": "1.0.0",
-  "description": "Sistema de insumos médicos",
+  "description": "A NodeJS api",
   "main": "index.js",
   "author": "difi",
   "license": "MIT",
