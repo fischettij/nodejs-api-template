@@ -1,16 +1,24 @@
 var cors = require('cors')
 const express = require('express');
 const bodyParser = require('body-parser');
+const { OK } = require('http-status-codes');
 
 const app = express();
+
+function jsonOK(data) { this.type('application/json').status(OK).json(data); }
 
 // Middleware
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/json' }));
+app.use((req, res, next) => {
+  // Response helpers
+  res.jsonOK = jsonOK;
+  next();
+});
 
 // Rutas
-app.use('/hi', (req, res, next) => {res.status(200).json({sucsess: "asd"})});
+app.use('/hi', require('./api/hi'));
 
 // Error Handling
 app.use((req, res, next) => {
@@ -27,3 +35,5 @@ app.use((error, req, res, next) => {
     },
   });
 });
+
+module.exports = app;
