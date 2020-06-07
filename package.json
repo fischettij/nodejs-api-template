@@ -6,6 +6,7 @@
   "author": "difi",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon --ignore node_modules ./index.js",
     "test": "NODE_ENV=test jest --verbose",
     "test:ci": "NODE_ENV=test jest --coverage && coveralls < coverage/lcov.info",
@@ -15,6 +16,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-routes-catalogue": "^1.1.0",
     "http-status-codes": "^1.4.0",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
