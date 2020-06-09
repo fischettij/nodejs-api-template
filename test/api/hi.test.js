@@ -13,6 +13,6 @@ describe('Hi Endpoints', () => {
       .get('/hi')
       .send();
     expect(res.status).toBe(OK);
-    expect(res.body).toBeValidSchema(resposeSchema);
+    expect(res.body).toEqual({ result: 'Its work!' });
   });
 });
