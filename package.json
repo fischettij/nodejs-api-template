@@ -6,29 +6,40 @@
   "author": "difi",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon --ignore node_modules ./index.js",
+    "lint": "eslint --ext .js ./ src/ test/",
     "test": "NODE_ENV=test jest --verbose",
     "test:ci": "NODE_ENV=test jest --coverage && coveralls < coverage/lcov.info",
-    "test:coverage": "NODE_ENV=test jest --coverage"
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "dependencies": {
+    "@leandrojdl/express-routes": "^5.0.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-routes-catalogue": "^1.1.0",
+    "express-validator": "^6.5.0",
     "http-status-codes": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "path": "^0.12.7",
     "sequelize": "^5.21.6",
-    "winston-ready": "^2.0.1"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "coveralls": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
     "jest": "^25.4.0",
     "jest-extended": "^0.11.5",
     "nodemon": "^2.0.3",
+    "sqlite3": "^4.2.0",
     "supertest": "^4.0.2"
   },
   "jest": {
