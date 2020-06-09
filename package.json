@@ -8,9 +8,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon --ignore node_modules ./index.js",
+    "lint": "eslint --ext .js ./ src/ test/",
     "test": "NODE_ENV=test jest --verbose",
     "test:ci": "NODE_ENV=test jest --coverage && coveralls < coverage/lcov.info",
-    "test:coverage": "NODE_ENV=test jest --coverage"
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "coveralls": "coveralls < coverage/lcov.info"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
