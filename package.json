@@ -10,7 +10,11 @@
     "dev": "nodemon --ignore node_modules ./index.js",
     "lint": "eslint --ext .js ./ src/ test/",
     "test": "NODE_ENV=test jest --verbose",
+<<<<<<< HEAD
     "test:ci": "NODE_ENV=test jest --coverage && coveralls < coverage/lcov.info",
+=======
+    "test:ci": "jest --verbose --coverage",
+>>>>>>> mejoras
     "test:coverage": "NODE_ENV=test jest --coverage",
     "coveralls": "coveralls < coverage/lcov.info"
   },
